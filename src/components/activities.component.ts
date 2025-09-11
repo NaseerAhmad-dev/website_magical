@@ -232,7 +232,7 @@ export class ActivitiesComponent {
   hoveredActivity = signal<number | null>(null);
 
   categories = signal(['All', 'Trekking', 'Adventure Sports', 'Nature']);
-  categories = signal(['All', 'Kashmir Tours', 'Ladakh Adventures', 'Cultural']);
+  // categories = signal(['All', 'Kashmir Tours', 'Ladakh Adventures', 'Cultural']);
 
   activities = signal<Activity[]>([
     {
