@@ -48,8 +48,8 @@ import { CommonModule } from '@angular/common';
           <div class="footer-section">
             <h4>Contact Info</h4>
             <div class="contact-info">
-              <p>📍 123 Mountain View Road<br>Hill Station, India 123456</p>
-              <p>📞 +91 98765 43210</p>
+              <p>📍Kangan Ganderbal<br> India 191202</p>
+             <p>+91 9596354066</p>
               <p>✉️ info&#64;magicalmountain.in</p>
             </div>
             
@@ -75,6 +75,10 @@ import { CommonModule } from '@angular/common';
         </div>
       </div>
     </footer>
+    <div class="footer-dev-credit">
+      Developed & Designed by 
+      <a href="https://dafolio.com/seerhmad" target="_blank" rel="noopener">Naseer Ahmad</a>
+    </div>
   `,
   styles: [`
     .footer {
@@ -253,6 +257,30 @@ import { CommonModule } from '@angular/common';
       .footer-links {
         justify-content: center;
       }
+    }
+    
+    .footer-dev-credit {
+      text-align: center;
+      padding: 0.7rem 0 1.2rem 0;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(90deg, #1e3a8a 0%, #ea580c 100%);
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      border-radius: 0 0 12px 12px;
+      margin-top: -0.5rem;
+    }
+    
+    .footer-dev-credit a {
+      color: #ffd700;
+      text-decoration: underline;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    
+    .footer-dev-credit a:hover {
+      color: #fff;
+      text-shadow: 0 2px 8px #ea580c;
     }
   `]
 })

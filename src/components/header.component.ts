@@ -11,7 +11,9 @@ import { RouterModule } from '@angular/router';
       <div class="container">
         <nav class="nav">
           <div class="logo">
-            <h2>Magical Mountain</h2>
+            <a href="#home" (click)="closeMobileMenu()">
+              <img src="assets/logo.png" alt="Magical Mountain Logo" class="logo-img">
+            </a>
           </div>
           
           <div class="nav-links" [class.active]="mobileMenuOpen()">
@@ -31,7 +33,7 @@ import { RouterModule } from '@angular/router';
       </div>
     </header>
   `,
- styles: [`
+  styles: [`
     /* ========== HEADER BASE ========== */
     .header {
       position: fixed;
@@ -56,7 +58,7 @@ import { RouterModule } from '@angular/router';
       margin: 0 auto;
       padding: 0 1rem;
       width: 100%;
-      margin-top:20px;
+      /* margin-top:20px; Removed to prevent initial header jump */
     }
 
     .nav {
@@ -68,14 +70,14 @@ import { RouterModule } from '@angular/router';
       min-height: 56px;
     }
 
-    .logo h2 {
-      color: white;
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-      margin: 0;
-      text-shadow: 0 2px 8px rgba(30,58,138,0.10);
-      transition: color 0.3s;
+    .logo-img {
+      height: 40px; /* Adjust as needed for better visibility */
+      width: auto;
+      transition: height 0.3s ease;
+    }
+
+    .header.scrolled .logo-img {
+        height: 35px; /* Slightly smaller when scrolled */
     }
 
     /* ========== NAV LINKS (MOBILE FIRST) ========== */
@@ -84,8 +86,8 @@ import { RouterModule } from '@angular/router';
       flex-direction: column;
       align-items: flex-start;
       position: absolute;
-      top: 110%;
-      left: -10px;
+      top: 110%; /* Adjusted to be just below the header */
+      left: -10px; /* Adjusted to align with container padding */
       right: 0;
       background: rgba(30, 58, 138, 0.92);
       backdrop-filter: blur(18px);
@@ -95,9 +97,18 @@ import { RouterModule } from '@angular/router';
       opacity: 0;
       pointer-events: none;
       transform: translateY(-10px) scaleY(0.98);
+      transform-origin: top; /* Important for scaleY animation */
       transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
       z-index: 1001;
-      width: 100%; /* Make menu match nav/container width */
+      width: calc(100% + 20px); /* Adjust width to account for left offset */
+    }
+    
+    .container {
+        position: relative; /* Make container position context for absolute menu */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        width: 100%;
     }
 
     .nav-links.active {
@@ -196,6 +207,7 @@ import { RouterModule } from '@angular/router';
         padding: 0;
         align-items: center;
         transform: none !important;
+        width: auto; /* Reset width for desktop */
       }
 
       .nav-links a {

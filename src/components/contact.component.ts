@@ -22,7 +22,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
           <div class="info-icon">📍</div>
           <div class="info-details">
             <h4>Visit Us</h4>
-            <p>123 Mountain View Road<br>Hill Station, India 123456</p>
+            <p>Kangan Ganderbal<br> India 191202</p>
           </div>
         </div>
         
@@ -30,7 +30,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
           <div class="info-icon">📞</div>
           <div class="info-details">
             <h4>Call Us</h4>
-            <p>+91 98765 43210<br>+91 87654 32109</p>
+            <p>+91 9596354066<br>+91 9596354066</p>
           </div>
         </div>
         
