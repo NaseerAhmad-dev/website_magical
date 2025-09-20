@@ -80,7 +80,7 @@ interface Destination {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     
     .destination-card {
@@ -204,15 +204,60 @@ interface Destination {
     @media (max-width: 768px) {
       .destinations-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+      }
+      
+      .destination-card {
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        margin-bottom: 0.5rem;
       }
       
       .destination-card.featured {
         transform: none;
+        border-width: 1.5px;
       }
       
-      .destination-card.featured:hover {
-        transform: translateY(-8px);
+      .card-image {
+        height: 150px;
+      }
+      
+      .card-content {
+        padding: 1rem;
+      }
+      
+      .card-header h3 {
+        font-size: 1.1rem;
+      }
+      
+      .location {
+        font-size: 0.85rem;
+      }
+      
+      .description {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      
+      .destination-info {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .card-btn {
+        font-size: 0.95rem;
+        padding: 0.6rem 0;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
       }
     }
   `]

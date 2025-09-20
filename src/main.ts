@@ -38,6 +38,8 @@ import { FooterComponent } from './components/footer.component';
   styles: [`
     .app {
       min-height: 100vh;
+   
+    border:2px solid green;
     }
     
     main {

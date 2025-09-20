@@ -8,160 +8,168 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   imports: [CommonModule, ReactiveFormsModule],
   template: `
     <section id="contact" class="section contact">
-      <div class="container">
-        <h2 class="section-title">Plan Your Adventure</h2>
-        <p class="section-subtitle">
-          Ready to explore the mountains? Get in touch with us to plan your perfect mountain adventure. 
-          Our team of experts is here to help you create unforgettable memories.
-        </p>
-        
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-card">
-              <div class="info-icon">📍</div>
-              <div class="info-details">
-                <h4>Visit Us</h4>
-                <p>123 Mountain View Road<br>Hill Station, India 123456</p>
-              </div>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon">📞</div>
-              <div class="info-details">
-                <h4>Call Us</h4>
-                <p>+91 98765 43210<br>+91 87654 32109</p>
-              </div>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon">✉️</div>
-              <div class="info-details">
-                <h4>Email Us</h4>
-                <p>info&#64;magicalmountain.in<br>bookings&#64;magicalmountain.in</p>
-              </div>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon">⏰</div>
-              <div class="info-details">
-                <h4>Office Hours</h4>
-                <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: 10:00 AM - 5:00 PM</p>
-              </div>
-            </div>
+  <div class="container">
+    <h2 class="section-title">Plan Your Adventure</h2>
+    <p class="section-subtitle">
+      Ready to explore the mountains? Get in touch with us to plan your perfect mountain adventure. 
+      Our team of experts is here to help you create unforgettable memories.
+    </p>
+    
+    <div class="contact-content">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div class="info-details">
+            <h4>Visit Us</h4>
+            <p>123 Mountain View Road<br>Hill Station, India 123456</p>
           </div>
-          
-          <div class="contact-form">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <input 
-                    type="text" 
-                    id="firstName" 
-                    formControlName="firstName"
-                    [class.error]="isFieldInvalid('firstName')"
-                    placeholder="Enter your first name"
-                  >
-                  <div class="error-message" *ngIf="isFieldInvalid('firstName')">
-                    First name is required
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input 
-                    type="text" 
-                    id="lastName" 
-                    formControlName="lastName"
-                    [class.error]="isFieldInvalid('lastName')"
-                    placeholder="Enter your last name"
-                  >
-                  <div class="error-message" *ngIf="isFieldInvalid('lastName')">
-                    Last name is required
-                  </div>
-                </div>
-              </div>
-              
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    formControlName="email"
-                    [class.error]="isFieldInvalid('email')"
-                    placeholder="Enter your email"
-                  >
-                  <div class="error-message" *ngIf="isFieldInvalid('email')">
-                    Please enter a valid email address
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    formControlName="phone"
-                    [class.error]="isFieldInvalid('phone')"
-                    placeholder="Enter your phone number"
-                  >
-                  <div class="error-message" *ngIf="isFieldInvalid('phone')">
-                    Phone number is required
-                  </div>
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="destination">Preferred Destination</label>
-                <select 
-                  id="destination" 
-                  formControlName="destination"
-                  [class.error]="isFieldInvalid('destination')"
-                >
-                  <option value="">Select a destination</option>
-                  <option value="srinagar-dal-lake">Srinagar & Dal Lake</option>
-                  <option value="leh-ladakh">Leh Ladakh</option>
-                  <option value="gulmarg">Gulmarg</option>
-                  <option value="pahalgam">Pahalgam</option>
-                  <option value="sonamarg">Sonamarg</option>
-                </select>
-                <div class="error-message" *ngIf="isFieldInvalid('destination')">
-                  Please select a destination
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea 
-                  id="message" 
-                  formControlName="message"
-                  [class.error]="isFieldInvalid('message')"
-                  rows="5"
-                  placeholder="Tell us about your dream Kashmir or Ladakh tour..."
-                ></textarea>
-                <div class="error-message" *ngIf="isFieldInvalid('message')">
-                  Please tell us about your adventure plans
-                </div>
-              </div>
-              
-              <button 
-                type="submit" 
-                class="btn btn-primary submit-btn"
-                [disabled]="contactForm.invalid || isSubmitting()"
-              >
-                <span *ngIf="!isSubmitting()">Send Message</span>
-                <span *ngIf="isSubmitting()">Sending...</span>
-              </button>
-            </form>
-            
-            <div class="success-message" *ngIf="showSuccessMessage()">
-              ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-            </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div class="info-details">
+            <h4>Call Us</h4>
+            <p>+91 98765 43210<br>+91 87654 32109</p>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div class="info-details">
+            <h4>Email Us</h4>
+            <p>info&#64;magicalmountain.in<br>bookings&#64;magicalmountain.in</p>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">⏰</div>
+          <div class="info-details">
+            <h4>Office Hours</h4>
+            <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: 10:00 AM - 5:00 PM</p>
           </div>
         </div>
       </div>
-    </section>
+      
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input 
+                type="text" 
+                id="firstName" 
+                formControlName="firstName"
+                [class.error]="isFieldInvalid('firstName')"
+                placeholder="Enter your first name"
+              >
+              @if (isFieldInvalid('firstName')) {
+                <div class="error-message">First name is required</div>
+              }
+            </div>
+            
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input 
+                type="text" 
+                id="lastName" 
+                formControlName="lastName"
+                [class.error]="isFieldInvalid('lastName')"
+                placeholder="Enter your last name"
+              >
+              @if (isFieldInvalid('lastName')) {
+                <div class="error-message">Last name is required</div>
+              }
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email"
+                [class.error]="isFieldInvalid('email')"
+                placeholder="Enter your email"
+              >
+              @if (isFieldInvalid('email')) {
+                <div class="error-message">Please enter a valid email address</div>
+              }
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                formControlName="phone"
+                [class.error]="isFieldInvalid('phone')"
+                placeholder="Enter your phone number"
+              >
+              @if (isFieldInvalid('phone')) {
+                <div class="error-message">Phone number is required</div>
+              }
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="destination">Preferred Destination</label>
+            <select 
+              id="destination" 
+              formControlName="destination"
+              [class.error]="isFieldInvalid('destination')"
+            >
+              <option value="">Select a destination</option>
+              <option value="srinagar-dal-lake">Srinagar & Dal Lake</option>
+              <option value="leh-ladakh">Leh Ladakh</option>
+              <option value="gulmarg">Gulmarg</option>
+              <option value="pahalgam">Pahalgam</option>
+              <option value="sonamarg">Sonamarg</option>
+            </select>
+            @if (isFieldInvalid('destination')) {
+              <div class="error-message">Please select a destination</div>
+            }
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              formControlName="message"
+              [class.error]="isFieldInvalid('message')"
+              rows="5"
+              placeholder="Tell us about your dream Kashmir or Ladakh tour..."
+            ></textarea>
+            @if (isFieldInvalid('message')) {
+              <div class="error-message">Please tell us about your adventure plans</div>
+            }
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn btn-primary submit-btn"
+            [disabled]="contactForm.invalid || isSubmitting()"
+          >
+            @if (!isSubmitting()) {
+              <span>Send Message</span>
+            } @else {
+              <span>Sending...</span>
+            }
+          </button>
+        </form>
+        
+        @if (showSuccessMessage()) {
+          <div class="success-message">
+            ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
   `,
   styles: [`
     .contact {
